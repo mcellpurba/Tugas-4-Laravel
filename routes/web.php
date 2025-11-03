@@ -23,3 +23,12 @@ Route::post('/mahasiswa', [MahasiswaController::class, 'store']); // proses simp
 Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit']); // form edit
 Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']); // proses update
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);// proses hapus
+
+use App\Http\Controllers\FakultasController;
+Route::resource('fakultas', FakultasController::class);
+Route::get('/fakultas', [FakultasController::class, 'index']); // list atau profil
+Route::get('/fakultas/create', [FakultasController::class, 'create']); // form tambah
+Route::post('/fakultas', [FakultasController::class, 'store']); // proses simpan
+Route::get('/fakultas/{id}/edit', [FakultasController::class, 'edit']); // form edit
+Route::put('/fakultas/{id}', [FakultasController::class, 'update']); // proses update
+Route::delete('/fakultas/{id}', [FakultasController::class, 'destroy']);// proses hapus
