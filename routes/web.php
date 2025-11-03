@@ -32,3 +32,12 @@ Route::post('/fakultas', [FakultasController::class, 'store']); // proses simpan
 Route::get('/fakultas/{id}/edit', [FakultasController::class, 'edit']); // form edit
 Route::put('/fakultas/{id}', [FakultasController::class, 'update']); // proses update
 Route::delete('/fakultas/{id}', [FakultasController::class, 'destroy']);// proses hapus
+
+use App\Http\Controllers\ProdiController;
+Route::resource('prodi', ProdiController::class);
+Route::get('/prodi', [ProdiController::class, 'index']); // list atau profil
+Route::get('/prodi/create', [ProdiController::class, 'create']); // form tambah
+Route::post('/prodi', [ProdiController::class, 'store']); // proses simpan
+Route::get('/prodi/{id}/edit', [ProdiController::class, 'edit']); // form edit
+Route::put('/prodi/{id}', [ProdiController::class, 'update']); // proses update
+Route::delete('/prodi/{id}', [ProdiController::class, 'destroy']);// proses hapus
