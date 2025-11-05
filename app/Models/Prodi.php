@@ -15,8 +15,14 @@ class Prodi extends Model
         'nama_prodi'
     ];
 
-    public function fakultas()
-    {
-        return $this->belongsTo(Fakultas::class);
-    }
+    public function fakultas() {
+        return $this->belongsTo(Fakultas::class, 'fakultasid');
 }
+}
+
+$f = Fakultas::find(1);
+foreach ($f->prodi as $p) {
+// tampilan program studi dari fakultas dengan id = 1
+}
+$list = Fakultas::with('prodi')->get();
+Fakultas::withCount('prodi')->get();

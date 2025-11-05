@@ -20,4 +20,14 @@ class Fakultas extends Model
         'email',
         'no_telepon',
     ];
+    public function prodi() {
+        return $this->hasMany(Prodi::class, 'fakultasid');
+    }
 }
+
+$f = Fakultas::find(1);
+foreach ($f->prodi as $p) {
+// tampilan program studi dari fakultas dengan id = 1
+}
+$list = Fakultas::with('prodi')->get();
+Fakultas::withCount('prodi')->get();
